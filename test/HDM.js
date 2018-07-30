@@ -33,11 +33,11 @@ describe('HDM', () => {
       done()
     })
 
-    parser.parse('$04HDM,186.5,M*2C').catch(e => done(e))
+    parser.parse('$04HDM,186.5,M*2C')
   })
 
   it('Doesn\'t choke on empty sentences', () => {
-    const result = new Parser().parse('$SKHDM,,*59')
+    const result = new Parser().parseImmediate('$SKHDM,,*59')
     should.equal(result, null)
   })
 

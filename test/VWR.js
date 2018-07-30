@@ -52,7 +52,7 @@ describe('VWR', () => {
   })
 
   it('Doesn\'t choke on empty sentences', () => {
-    const result = new Parser().parse('$PIVWR,,,,,,,,*4A')
+    const result = new Parser().parseImmediate('$PIVWR,,,,,,,,*4A')
     should.equal(result, null)
   })
 

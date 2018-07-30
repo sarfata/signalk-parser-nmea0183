@@ -33,7 +33,7 @@ describe('DSC', () => {
   })
 
   it('Doesn\'t choke on empty sentences', () => {
-    const result = new Parser().parse(emptyNmeaLine)
+    const result = new Parser().parseImmediate(emptyNmeaLine)
     should.equal(result, null)
   })
 })

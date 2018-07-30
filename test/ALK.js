@@ -121,14 +121,14 @@ describe('ALK', done => {
   })
 
   it('Doesn\'t choke on empty 0x9C sentences', () => {
-    should.equal(new Parser().parse('$STALK,9C,,,*3B'), null)
+    should.equal(new Parser().parseImmediate('$STALK,9C,,,*3B'), null)
   })
 
   it('Doesn\'t choke on empty 0x84 sentences', () => {
-    should.equal(new Parser().parse('$STALK,84,,,,,,,,*61'), null)
+    should.equal(new Parser().parseImmediate('$STALK,84,,,,,,,,*61'), null)
   })
 
   it('Doesn\'t choke on malformed 0x84 sentences', () => {
-    should.equal(new Parser().parse('$STALK,84,*4D'), null)
+    should.equal(new Parser().parseImmediate('$STALK,84,*4D'), null)
   })
 })

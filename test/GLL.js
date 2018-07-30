@@ -36,11 +36,11 @@ describe('GLL', () => {
       done()
     })
 
-    parser.parse('$GPGLL,5958.613,N,02325.928,E,121022,A,D*40').catch(e => done(e))
+    parser.parse('$GPGLL,5958.613,N,02325.928,E,121022,A,D*40')
   })
 
   it('Doesn\'t choke on empty sentences', () => {
-    const result = new Parser().parse('$GPGLL,,,,,,,*7C')
+    const result = new Parser().parseImmediate('$GPGLL,,,,,,,*7C')
     should.equal(result, null)
   })
 

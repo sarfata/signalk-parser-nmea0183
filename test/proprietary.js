@@ -27,7 +27,7 @@ chai.use(require('chai-things'))
 describe('Proprietary sentences', () => {
 
   it('Don\'t break the parser', () => {
-    const result = new Parser().parse(nmeaLine)
+    const result = new Parser().parseImmediate(nmeaLine)
     should.equal(result, null)
   })
 
@@ -38,7 +38,7 @@ describe('Proprietary sentences', () => {
       done(new Error('Emitted delta for proprietary sentence: ' + JSON.stringify(delta)))
     })
 
-    const result = parser.parse(nmeaLine)
+    const result = parser.parseImmediate(nmeaLine)
     should.equal(result, null)
   })
 })

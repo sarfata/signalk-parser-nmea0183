@@ -38,7 +38,7 @@ describe('VDO', function() {
   })
 
   it('Doesn\'t choke on empty sentences', () => {
-    const result = new Parser().parse('!AIVDM,,,,,,*57')
+    const result = new Parser().parseImmediate('!AIVDM,,,,,,*57')
     should.equal(result, null)
   })
 })

@@ -33,11 +33,11 @@ describe('HDT', () => {
       done()
     })
 
-    parser.parse('$GPHDT,123.456,T*32').catch(e => done(e))
+    parser.parse('$GPHDT,123.456,T*32')
   })
 
   it('Doesn\'t choke on empty sentences', () => {
-    const result = new Parser().parse('$SKHDT,,*40')
+    const result = new Parser().parseImmediate('$SKHDT,,*40')
     should.equal(result, null)
   })
 

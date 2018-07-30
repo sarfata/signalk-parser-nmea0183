@@ -57,7 +57,7 @@ describe('GGA', () => {
   })
 
   it('Doesn\'t choke on empty sentences', () => {
-    const result = new Parser().parse('$GPGGA,,,,,,,,,,,,,,*56')
+    const result = new Parser().parseImmediate('$GPGGA,,,,,,,,,,,,,,*56')
       should.equal(result, null)
   })
 
