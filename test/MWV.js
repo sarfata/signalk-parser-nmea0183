@@ -32,13 +32,8 @@ describe('MWV', () => {
     parser.parse('$IIMWV,336,R,13.41,N,A*22').catch(e => { done(e) })
   })
 
-  it('Doesn\'t choke on empty sentences', done => {
-    new Parser()
-    .parse('$IIMWV,,,,*4C')
-    .then(result => {
-      should.equal(result, null)
-      done()
-    })
-    .catch(e => done(e))
+  it('Doesn\'t choke on empty sentences', () => {
+    const result = new Parser().parse('$IIMWV,,,,*4C')
+    should.equal(result, null)
   })
 })

@@ -82,16 +82,10 @@ describe('DPT', () => {
     })
 
     parser.parse('$IIDPT,4.1,-1.0*69').catch(e => done(e))
-  })  
-  
-  it('Doesn\'t choke on empty sentences', done => {
-    new Parser()
-    .parse('$IIDPT,,,*6C')
-    .then(result => {
-      should.equal(result, null)
-      done()
-    })
-    .catch(e => done(e))
   })
 
+  it('Doesn\'t choke on empty sentences', () => {
+    const result = new Parser().parse('$IIDPT,,,*6C')
+    should.equal(result, null)
+  })
 })

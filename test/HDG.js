@@ -48,14 +48,9 @@ describe('HDG', () => {
     parser.parse('$HCHDG,51.5,,,,*73').catch(e => done(e))
   })
 
-  it('Doesn\'t choke on empty sentences', done => {
-    new Parser()
-    .parse('$SDHDG,,,,,*70')
-    .then(result => {
-      should.equal(result, null)
-      done()
-    })
-    .catch(e => done(e))
+  it('Doesn\'t choke on empty sentences', () => {
+    const result = new Parser().parse('$SDHDG,,,,,*70')
+    should.equal(result, null)
   })
 
 })

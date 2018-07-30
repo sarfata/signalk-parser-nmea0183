@@ -36,14 +36,9 @@ describe('HDM', () => {
     parser.parse('$04HDM,186.5,M*2C').catch(e => done(e))
   })
 
-  it('Doesn\'t choke on empty sentences', done => {
-    new Parser()
-    .parse('$SKHDM,,*59')
-    .then(result => {
-      should.equal(result, null)
-      done()
-    })
-    .catch(e => done(e))
+  it('Doesn\'t choke on empty sentences', () => {
+    const result = new Parser().parse('$SKHDM,,*59')
+    should.equal(result, null)
   })
 
 })

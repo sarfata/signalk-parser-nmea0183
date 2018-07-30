@@ -67,16 +67,9 @@ describe('RMB', () => {
 
   })
 
-  it('Doesn\'t choke on empty sentences', done => {
-    const parser = new Parser()
-    parser
-    .parse('$ECRMB,,,,,,,,,,,,,*77')
-    .then(result => {
-      should.equal(result, null)
-
-      done()
-    })
-    .catch(e => done(e))
+  it('Doesn\'t choke on empty sentences', () => {
+    const result = new Parser().parse('$ECRMB,,,,,,,,,,,,,*77')
+    should.equal(result, null)
   })
 
 })
