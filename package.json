@@ -24,7 +24,6 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@signalk/nmea0183-utilities": "^0.6.0",
-    "@signalk/signalk-schema": "1.0.3",
     "ggencoder": "^0.1.18",
     "moment": "^2.17.1",
     "moment-timezone": "^0.5.11",
@@ -35,7 +34,9 @@
     "debug": "^3.1.0",
     "chai": "^4.1.2",
     "chai-things": "^0.2.0",
-    "mocha": "^5.0.0"
+    "mocha": "^5.0.0",
+    "_comment": " FIXME: moved here because of a dependency to tv4formats which breaks webpack (they use a try{require()} catch{require()}) and webpack tries to pack both which does not work because only one exists. This will break VDM parsing which requires signalk-schema. ",
+    "@signalk/signalk-schema": "1.0.3"
   },
   "repository": {
     "type": "git",
